@@ -15,7 +15,8 @@ app.get("/", (req, res) => {
 });
 
 app.get("/:userId", (req, res) => {
-  const userId = req.params.userId;
+  const userId = parseInt(req.params.userId);
+
   const findUser = users.find((u) => u.id === userId);
 
   if (!findUser) {
